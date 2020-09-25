@@ -134,6 +134,7 @@ static void SetConfigHandler(struct mg_rpc_request_info *ri, void *cb_arg,
   } else {
     restart_required = true;
     mgos_sys_config_set_wc_enable(wc_enable);
+    mgos_sys_config_set_wc_calibrated(false);
   }
   if (st.ok()) {
     mgos_sys_config_save(&mgos_sys_config, false /* try once */, NULL);
